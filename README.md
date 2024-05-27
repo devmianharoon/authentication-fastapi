@@ -51,25 +51,26 @@ This is a FastAPI-based application implementing OAuth2 authentication with Goog
     ```poetry run dev```
 
 6. **Usage**
-    Endpoints:
+    ## Endpoints:
 
-    Google Login:
+    # Google Login:
+       - GET /google-login - Redirects to Google OAuth2 login page.
+       - GET /auth/google - Callback URL for Google authentication.
 
-    GET /google-login - Redirects to Google OAuth2 login page.
-    GET /auth/google - Callback URL for Google authentication.
-    GitHub Login:
+    # GitHub Login:
+       - GET /github-login - Redirects to GitHub OAuth2 login page.
+       - GET /auth/callback - Callback URL for GitHub authentication.
 
-    GET /github-login - Redirects to GitHub OAuth2 login page.
-    GET /auth/callback - Callback URL for GitHub authentication.
-    User Registration:
+    # User Registration:
+       - POST /resister - Register a new user.
 
-    POST /resister - Register a new user.
-    User Login:
+    # User Login:
+       - POST /login - Login with username and password.
 
-    POST /login - Login with username and password.
-    Get All Users:
+    # Get All Users:
 
-    GET /users - Retrieve all registered users.
+       - GET /users - Retrieve all registered users.
 
 **Contributing**
+
     Contributions are welcome! Please open an issue or submit a pull request.
