@@ -10,7 +10,6 @@ This is a FastAPI-based application implementing OAuth2 authentication with Goog
 - Fetch all registered users.
 
 ## Prerequisites
-
 - Python 3.11+
 - FastAPI
 - SQLModel
