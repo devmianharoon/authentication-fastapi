@@ -27,7 +27,7 @@ GOOGLE_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI")
 GOOGLE_TOKEN_URL = os.getenv("GOOGLE_TOKEN_URL")
 
 
-app = FastAPI()
+app = FastAPI(description="Account API. [Privacy checks](/gdpr)")
 
 # oauth2 Schema
 oauth2_password_scheme = OAuth2PasswordBearer(tokenUrl="login")
@@ -166,3 +166,8 @@ def get_all_user(token: str = Depends(oauth2_password_scheme)):
 def start():
     create_tables()
     uvicorn.run("app.main:app", host="127.0.0.1", port=8080, reload=True)
+
+
+# PrivacyLib verifies the JWT and resolves its persisted subject for all private routes.
+from .gdpr import router as gdpr_router
+app.include_router(gdpr_router)

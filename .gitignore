@@ -1,2 +1,7 @@
 .env
 app.__pycache__
+# Local Python runtime/database files
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.sqlite3-*
